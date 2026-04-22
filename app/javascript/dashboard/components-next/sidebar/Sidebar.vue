@@ -214,7 +214,7 @@ const menuItems = computed(() => {
   return [
     {
       name: 'Inbox',
-      label: t('SIDEBAR.INBOX'),
+      label: 'Conversas / Chat',
       icon: 'i-lucide-inbox',
       to: accountScopedRoute('inbox_view'),
       activeOn: ['inbox_view', 'inbox_view_conversation'],
@@ -383,7 +383,7 @@ const menuItems = computed(() => {
     },
     {
       name: 'Contacts',
-      label: t('SIDEBAR.CONTACTS'),
+      label: 'Ger. de Atendimentos',
       icon: 'i-lucide-contact',
       children: [
         {
@@ -463,7 +463,7 @@ const menuItems = computed(() => {
     },
     {
       name: 'Reports',
-      label: t('SIDEBAR.REPORTS'),
+      label: 'DASHBOARDS',
       icon: 'i-lucide-chart-spline',
       children: [
         {
@@ -731,7 +731,7 @@ const menuItems = computed(() => {
         ],
       },
     ]"
-    class="bg-n-background flex flex-col text-sm pb-px fixed top-0 ltr:left-0 rtl:right-0 h-full z-40 w-[200px] md:w-auto md:relative md:flex-shrink-0 md:ltr:translate-x-0 md:rtl:translate-x-0 ltr:border-r rtl:border-l border-n-weak"
+    class="flex flex-col text-sm pb-px fixed top-0 ltr:left-0 rtl:right-0 h-full z-40 w-[200px] md:w-auto md:relative md:flex-shrink-0 md:ltr:translate-x-0 md:rtl:translate-x-0"
     :class="[
       {
         'shadow-lg md:shadow-none': isMobileSidebarOpen,
@@ -740,7 +740,7 @@ const menuItems = computed(() => {
           !isResizing,
       },
     ]"
-    :style="isMobile ? undefined : { width: `${sidebarWidth}px` }"
+    :style="isMobile ? { backgroundColor: '#2b3643', color: '#b4bcc8' } : { width: `${sidebarWidth}px`, backgroundColor: '#2b3643', color: '#b4bcc8' }"
   >
     <section
       class="grid"
@@ -760,8 +760,8 @@ const menuItems = computed(() => {
           />
         </template>
         <template v-else>
-          <div class="grid flex-shrink-0 place-content-center size-6">
-            <Logo class="size-4" />
+          <div class="grid flex-shrink-0 place-content-center h-6" style="padding-left: 0.5rem; font-weight: bold; font-size: 1.2rem; color: #fff;">
+            EXA<span style="color: #32c5d2;">TI</span>
           </div>
           <div class="flex-shrink-0 w-px h-3 bg-n-strong" />
           <SidebarAccountSwitcher
